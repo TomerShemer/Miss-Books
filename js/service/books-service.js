@@ -14,6 +14,8 @@ export const bookService = {
     getEmptyReview,
     addGoogleBook,
     getGoogleBooks,
+    getNextBookId,
+    getPrevBookId,
 }
 
 const SEARCH_KEY = 'searchDB'
@@ -66,6 +68,24 @@ function getEmptyReview() {
         date: null,
         txt: ''
     }
+}
+
+function getNextBookId(bookId) {
+    return storageService.query(BOOKS_KEY)
+        .then(books => {
+            let idx = books.findIndex(book => book.id === bookId)
+            if (idx === books.length - 1) idx = -1
+            return books[idx + 1].id
+        })
+}
+
+function getPrevBookId(bookId) {
+    return storageService.query(BOOKS_KEY)
+        .then(books => {
+            let idx = books.findIndex(book => book.id === bookId)
+            if (!idx) idx = books.length
+            return books[idx - 1].id
+        })
 }
 
 function _createBooks() {
@@ -129,6 +149,8 @@ function _prepareGoogleBooksData(googleBooks) {
         else src = volumeInfo.imageLinks.thumbnail
         const price = utilService.getRandomIntInclusive(10, 300)
         const currency = Math.random() > 0.33 ? 'USD' : Math.random() > 0.66 ? 'ILS' : 'EUR'
+        const subtitle = (volumeInfo.subtitle) ? volumeInfo.subtitle : 'No subtitle available'
+        const publishedDate = (volumeInfo.publishedDate) ? +volumeInfo.publishedDate.slice(0, 4) : 'No publish date found'
         return {
             id,
             authors: volumeInfo.authors || ['No Authors'],
@@ -136,9 +158,9 @@ function _prepareGoogleBooksData(googleBooks) {
             description: volumeInfo.description || 'No description available.',
             language: volumeInfo.language,
             listPrice: { amount: price, currencyCode: currency, isOnSale: Math.random() > 0.5 },
-            pageCount: volumeInfo.pageCount,
-            publishedDate: +volumeInfo.publishedDate.slice(0, 4),
-            subtitle: volumeInfo.subtitle || 'No subtitle available.',
+            pageCount: volumeInfo.pageCount || null,
+            publishedDate,
+            subtitle,
             thumbnail: src,
             title: volumeInfo.title
         }

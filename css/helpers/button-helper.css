@@ -1,0 +1,19 @@
+.btn-black {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.btn-black:hover {
+    background-color: white;
+    color: black;
+}
+
+@media (max-width: 860px) {
+    .btn-black {
+        height: 48px;
+        min-width: 48px;
+    }
+}

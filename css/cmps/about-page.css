@@ -11,3 +11,13 @@
     margin-block-end: 10px;
     max-height: 800px;
 }
+
+.about-page p {
+    text-align: center;
+}
+
+.about-page .contact-nav {
+    display: flex;
+    gap: 15px;
+    margin-block-end: 10px;
+}

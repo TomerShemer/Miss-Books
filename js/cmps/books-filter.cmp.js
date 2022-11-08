@@ -19,10 +19,10 @@ export default {
                 type="number"
                 placeholder="Max. price" />
             
-                <button @click="filter">Filter</button>
+                <button @click="filter" class="btn-black">Filter</button>
 
                 <router-link to="/add-book">
-                    <button>Add new book</button>
+                    <button class="btn-black">Add new book</button>
                 </router-link>
 
             </form>

@@ -47,14 +47,6 @@ export default {
         }
     },
     computed: {
-        // booksToShow() {
-        //     const regex = new RegExp(this.filterBy.txt, 'i')
-        //     return this.books.filter(book => {
-        //         return regex.test(book.title) &&
-        //             book.listPrice.amount >= this.filterBy.fromPrice &&
-        //             book.listPrice.amount <= this.filterBy.toPrice
-        //     })
-        // },
         getBookIdx() {
             return this.books.findIndex(book => book.id === this.selectedBook.id)
         }
@@ -65,7 +57,7 @@ export default {
             .then(books => {
                 this.books = books
                 this.filteredBooks = [...this.books]
-                console.log('this.books', this.books)
+                // console.log('this.books', this.books)
             })
     },
     components: {

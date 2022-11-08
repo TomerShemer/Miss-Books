@@ -1,12 +1,10 @@
 .book-preview {
-    width: 200px;
     height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     background-color: var(--clr1);
-    /* cursor: pointer; */
     border: var(--clr4) solid 1px;
     border-radius: 5px;
     padding: 5px;

@@ -3,7 +3,7 @@ export default {
     template: `
         <section className="google-book-preview">
             <label>{{book.title}}</label>
-            <button @click="addGoogleBook(book)">+</button>
+            <button @click="addGoogleBook(book)" class="btn-black">+</button>
         </section>
     `,
     data() {

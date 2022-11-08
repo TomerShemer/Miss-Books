@@ -2,3 +2,8 @@
     min-height: 90vh;
     padding: 20px;
 }
+
+.book-add form {
+    margin: auto;
+    width: fit-content;
+}

@@ -1,5 +1,7 @@
 @import 'base/variables.css';
 @import 'base/fonts.css';
+@import 'helpers/button-helper.css';
+
 @import 'cmps/books-app.css';
 @import 'cmps/books-list.css';
 @import 'cmps/book-preview.css';
@@ -15,3 +17,7 @@
 @import 'cmps/review-preview.css';
 @import 'cmps/user-msg.css';
 @import 'cmps/book-add.css';
+@import 'cmps/google-book-list.css';
+@import 'cmps/google-book-preview.css';
+@import 'cmps/about-team.css';
+@import 'cmps/about-contact.css';

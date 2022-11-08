@@ -24,6 +24,14 @@ export default {
                     <router-link to="/book">Go Back</router-link>
                 </section>
             </section>
+            <section v-if="book" className="book-details-nav">
+                <router-link :to="'/book/' + prevBookId">
+                    <button class="btn-black">Previous book</button>
+                </router-link>
+                <router-link :to="'/book/' + nextBookId">
+                    <button class="btn-black">Next book</button>
+                </router-link>
+            </section>
             <review-add v-if="book" :id="book.id" @addReview="reviewAdded"/>
             <reviews-list v-if="hasReviews" :reviews="book.reviews" @reviewDeleted="deleteReview"/>
         </section>
@@ -31,7 +39,8 @@ export default {
     data() {
         return {
             book: null,
-            // hasReviews: false
+            prevBookId: null,
+            nextBookId: null,
         }
     },
     methods: {
@@ -44,6 +53,17 @@ export default {
         deleteReview(id) {
             bookService.deleteReview(this.book, id)
             this.reviews = this.book.reviews
+        },
+        loadBook() {
+            bookService.get(this.bookId)
+                .then(book => {
+                    this.book = book
+                    bookService.getNextBookId(book.id)
+                        .then(nextBookId => this.nextBookId = nextBookId)
+
+                    bookService.getPrevBookId(book.id)
+                        .then(prevBookId => this.prevBookId = prevBookId)
+                })
         }
     },
     computed: {
@@ -88,6 +108,9 @@ export default {
             if (!this.book.reviews) return false
             if (!this.book.reviews.length) return false
             return true
+        },
+        bookId() {
+            return this.$route.params.id
         }
 
     },
@@ -97,13 +120,13 @@ export default {
         reviewsList
     },
     created() {
-        const id = this.$route.params.id
-        bookService.get(id)
-            .then(book => {
-                // console.log(book);
-                this.book = book
-            })
+        this.loadBook()
     },
     mounted() {
+    },
+    watch: {
+        bookId() {
+            this.loadBook()
+        }
     }
 }

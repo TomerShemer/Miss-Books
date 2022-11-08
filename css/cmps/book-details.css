@@ -15,6 +15,13 @@
     margin-block-end: 15px;
 }
 
+.book-details-container .book-details-nav {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    margin-block-end: 10px;
+}
+
 .book-info {
     display: flex;
     flex-direction: column;

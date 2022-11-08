@@ -1,0 +1,12 @@
+.about-contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-contact .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
