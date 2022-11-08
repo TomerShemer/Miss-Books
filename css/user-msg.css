@@ -1,0 +1,36 @@
+.user-msg {
+    height: 100px;
+    width: 250px;
+    outline: 1px black solid;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--clr1);
+    display: grid;
+}
+
+.user-msg h1 {
+    align-self: center;
+    justify-self: center;
+}
+
+.user-msg button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.success {
+    background-color: green;
+}
+
+.warning {
+    background-color: orange;
+    color: black;
+}
+
+.failed {
+    background-color: rgb(160, 7, 7);
+}

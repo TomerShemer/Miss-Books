@@ -1,0 +1,10 @@
+.books-list ul {
+    padding: 0;
+    margin: auto;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 10px;
+    width: 1040px;
+    margin-block-end: 10px;
+}

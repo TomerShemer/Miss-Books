@@ -1,0 +1,11 @@
+.app-footer {
+    min-height: 5vh;
+    display: grid;
+    background-color: var(--clr3);
+    padding: 10px;
+}
+
+.app-footer small {
+    justify-self: center;
+    align-self: center;
+}

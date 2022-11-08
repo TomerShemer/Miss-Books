@@ -1,0 +1,21 @@
+.reviews-list {
+    background-color: var(--clr4);
+    width: 1040px;
+    margin: auto;
+    padding: 15px;
+    color: var(--clr1);
+    min-height: 250px;
+    border-radius: 10px;
+}
+
+.reviews-list ul {
+    display: grid;
+    gap: 15px;
+    list-style-type: none;
+    padding: 0;
+    grid-template-columns: repeat(auto-fill, 320px);
+}
+
+.reviews-list ul li {
+    height: 200px;
+}

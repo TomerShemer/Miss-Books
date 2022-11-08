@@ -1,0 +1,27 @@
+.app-header {
+    min-height: 5vh;
+    background-color: var(--clr3);
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header h1 {
+    cursor: pointer;
+    font-style: italic;
+    font-family: poorstory;
+}
+
+.app-header nav {
+    display: flex;
+    gap: 20px;
+}
+
+.app-header nav a {
+    color: white;
+}
+
+.app-header nav .router-link-exact-active {
+    color: orangered;
+}

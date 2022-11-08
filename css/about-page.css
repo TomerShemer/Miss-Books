@@ -1,0 +1,13 @@
+.about-page {
+    min-height: 90vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-page img {
+    max-width: 100%;
+    margin-block-end: 10px;
+    max-height: 800px;
+}

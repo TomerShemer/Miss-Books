@@ -1,0 +1,24 @@
+* {
+    /* outline: 1px black solid; */
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--clr2);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.books-app {
+    min-height: 90vh;
+    padding: 10px;
+}

@@ -1,0 +1,5 @@
+.long-text span {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}

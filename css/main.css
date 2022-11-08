@@ -1,0 +1,20 @@
+@import 'variables.css';
+@import 'books-app.css';
+@import 'books-list.css';
+@import 'book-preview.css';
+@import 'book-details.css';
+@import 'long-text.css';
+@import 'books-filter.css';
+@import 'app-header.css';
+@import 'app-footer.css';
+@import 'home-page.css';
+@import 'about-page.css';
+@import 'review-add.css';
+@import 'reviews-list.css';
+@import 'review-preview.css';
+@import 'user-msg.css';
+
+@font-face {
+    font-family: poorstory;
+    src: url(../fonts/PoorStory-Regular.ttf);
+}

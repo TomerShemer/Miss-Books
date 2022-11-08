@@ -1,0 +1,18 @@
+.books-filter form {
+    margin-block-end: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.books-filter button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.books-filter button:hover {
+    background-color: white;
+    color: black;
+}
