@@ -2,7 +2,9 @@ export default {
     props: [],
     template: `
         <section class="app-header">
-            <h1 @click="refresh">Miss-Books</h1>
+            <router-link to="/">
+                <h1>Miss-Books</h1>
+            </router-link>
             <nav>
                 <router-link to="/">Home</router-link>
                 <router-link to="/book">Books</router-link>
@@ -10,15 +12,4 @@ export default {
             </nav>
         </section>
     `,
-    data() {
-        return {
-        }
-    },
-    methods: {
-        refresh() {
-            location.reload()
-        }
-    },
-    computed: {
-    },
 }

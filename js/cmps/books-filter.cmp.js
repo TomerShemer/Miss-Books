@@ -27,7 +27,7 @@ export default {
 
             </form>
         </section>
-`,
+    `,
     data() {
         return {
             filterBy: {
@@ -39,11 +39,8 @@ export default {
     },
     methods: {
         filter() {
-            // console.log('this.filterBy', this.filterBy)
             if (!this.filterBy.toPrice) this.filterBy.toPrice = Infinity
             this.$emit('filtered', this.filterBy)
         }
-    },
-    computed: {
     },
 }

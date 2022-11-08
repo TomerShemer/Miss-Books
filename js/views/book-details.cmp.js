@@ -9,7 +9,9 @@ export default {
     template: `
         <section class="book-details-container">
             <section v-if="book" className="book-details">
-                <img :src="getUrl" />
+                <div className="img-container">
+                    <img :src="getUrl" />
+                </div>
                 <section class="book-info">
                     <h2>"{{this.book.title}}"</h2>
                     <h3>{{this.book.subtitle}}</h3>
@@ -20,8 +22,13 @@ export default {
                     <h4 :class="priceStyle">
                         {{formattedPrice}}
                     </h4>
+                    <div v-if="book.listPrice.isOnSale" className="sale-img-container">
+                        <img src="../../imgs/sale.png" alt="" />
+                    </div>
                     <long-text :txt="book.description"/>
-                    <router-link to="/book">Go Back</router-link>
+                    <router-link to="/book">
+                        <button class="btn-black">Go back</button>
+                    </router-link>
                 </section>
             </section>
             <section v-if="book" className="book-details-nav">

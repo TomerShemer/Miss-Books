@@ -23,3 +23,13 @@
     align-self: flex-start;
     cursor: pointer;
 }
+
+@media (max-width: 740px) {
+    .review-add {
+        max-width: fit-content;
+    }
+
+    .review-add form {
+        max-width: fit-content;
+    }
+}

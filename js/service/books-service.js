@@ -2,7 +2,7 @@ import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
 
 import database from '../../books.json' assert {type: 'json'}
-import googleDatabase from '../../googleBooks.json' assert {type: 'json'}
+import { eventBus } from './event-bus.service.js'
 
 export const bookService = {
     query,
@@ -98,7 +98,6 @@ function _createBooks() {
 }
 
 // GOOGLE BOOKS 
-// console.log('GoogleDb', googleDatabase);
 
 function getGoogleBooks(searchStr) {
     const keyword = searchStr.toLowerCase()
@@ -110,35 +109,30 @@ function getGoogleBooks(searchStr) {
     const url = `https://www.googleapis.com/books/v1/volumes?printType=books&q=effective%20${keyword}`
     return axios.get(url)
         .then(res => {
-            console.log('Got books from google');
+            console.log('Getting books from google');
             const books = _prepareGoogleBooksData(res.data)
             gSearchCache[keyword] = books
             utilService.saveToStorage(SEARCH_KEY, gSearchCache)
             return books
         })
         .catch(err => {
-            // TODO add user-msg
-            console.log('Problem getting books from google');
+            eventBus.emit('user-msg', { txt: 'Failed to get books from google.', type: 'failed' })
         })
 }
 
 
 function addGoogleBook(googleBook) {
-    console.log('Trying to add new book');
-    console.log(googleBook);
     storageService.get(BOOKS_KEY, googleBook.id)
         .then(book => {
             if (!book) {
-                console.log('Saving new book');
+                eventBus.emit('user-msg', { txt: 'Book added!', type: 'success' })
                 storageService.post(BOOKS_KEY, googleBook, false)
             }
             else {
-                //TODO change to user-msg
-                console.log('Book Already Exists:')
-                console.log(book);
+                eventBus.emit('user-msg', { txt: 'Book Already Exists.', type: 'warning' })
             }
         })
-        .catch(err => console.log('Error adding book', err))
+        .catch(err => eventBus.emit('user-msg', { txt: 'Problem adding book.', type: 'failed' }))
 }
 
 function _prepareGoogleBooksData(googleBooks) {

@@ -12,21 +12,12 @@ export default {
             </ul>
         </section>
         `,
-    data() {
-        return {
-        }
-    },
     methods: {
         reviewDeleted(id) {
             this.$emit('reviewDeleted', id)
         }
     },
-    computed: {
-    },
     components: {
         reviewPreview
     },
-    created() {
-        // console.log(this.reviews);
-    }
 }

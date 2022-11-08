@@ -10,7 +10,18 @@
     padding: 5px;
 }
 
+
 .book-preview h2 {
     text-align: center;
     text-transform: capitalize;
+}
+
+@media (min-width: 800px) {
+    .book-preview button {
+        opacity: 0;
+    }
+
+    .book-preview:hover button {
+        opacity: 1;
+    }
 }

@@ -1,4 +1,9 @@
 .google-book-preview {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
+    padding: 5px 10px;
+    background-color: var(--clr3);
+    align-items: center;
+    border-radius: 5px;
 }

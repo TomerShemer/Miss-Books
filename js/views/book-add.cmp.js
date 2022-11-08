@@ -3,7 +3,6 @@ import { bookService } from "../service/books-service.js"
 import googleBookList from "../cmps/google-book-list.cmp.js"
 
 export default {
-    props: [],
     template: `
         <section className="book-add">
             <form @submit.prevent="search">
@@ -29,8 +28,6 @@ export default {
         saveGoogleBook(book) {
             bookService.addGoogleBook(book)
         }
-    },
-    computed: {
     },
     components: {
         googleBookList,

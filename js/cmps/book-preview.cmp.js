@@ -4,16 +4,11 @@ export default {
         <section class="book-preview">
             <h2>{{book.title}}</h2>
             <h3>{{bookPrice}}</h3>
-            <router-link :to="'/book/' + book.id">Details</router-link>
+            <router-link :to="'/book/' + book.id">
+                <button class="btn-black">Details</button>
+            </router-link>
         </section>
     `,
-    data() {
-        return {
-
-        }
-    },
-    methods: {
-    },
     computed: {
         bookPrice() {
             const priceData = this.book.listPrice
@@ -21,7 +16,4 @@ export default {
             return price
         }
     },
-    created() {
-        // console.log(this.book);
-    }
 }

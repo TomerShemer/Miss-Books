@@ -13,7 +13,6 @@ export default {
                     <span>{{ratingValue}}</span>
                 </label>
                     <label for="read-at">Read at:
-                        <!-- TODO: format date -->
                     <input :value="getMaxDate" :max="getMaxDate" type="date" id="read-at" required/>
                 </label>
                 <textarea v-model="review.txt" cols="30" rows="10" placeholder="Your review" required></textarea>
@@ -45,9 +44,7 @@ export default {
         },
         getMaxDate() {
             const date = new Date()
-            // console.log(date);
             const dateStr = `${date.getFullYear()}-${(date.getMonth() + 1 + '').padStart(2, 0)}-${(date.getDate() + '').padStart(2, 0)}`
-            // console.log(dateStr);
             this.review.date = dateStr
             return dateStr
         }

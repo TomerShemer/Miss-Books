@@ -7,10 +7,15 @@
     align-items: center;
 }
 
+.app-header>a {
+    text-decoration: none;
+}
+
 .app-header h1 {
     cursor: pointer;
     font-style: italic;
     font-family: poorstory;
+    color: black;
 }
 
 .app-header nav {
