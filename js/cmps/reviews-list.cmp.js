@@ -10,7 +10,6 @@ export default {
                     <review-preview :review="review" @reviewDeleted="reviewDeleted"/>
                 </li>
             </ul>
-            <!-- <h2 v-else>No reviews</h2> -->
         </section>
         `,
     data() {

@@ -1,20 +1,17 @@
-@import 'variables.css';
-@import 'books-app.css';
-@import 'books-list.css';
-@import 'book-preview.css';
-@import 'book-details.css';
-@import 'long-text.css';
-@import 'books-filter.css';
-@import 'app-header.css';
-@import 'app-footer.css';
-@import 'home-page.css';
-@import 'about-page.css';
-@import 'review-add.css';
-@import 'reviews-list.css';
-@import 'review-preview.css';
-@import 'user-msg.css';
-
-@font-face {
-    font-family: poorstory;
-    src: url(../fonts/PoorStory-Regular.ttf);
-}
+@import 'base/variables.css';
+@import 'base/fonts.css';
+@import 'cmps/books-app.css';
+@import 'cmps/books-list.css';
+@import 'cmps/book-preview.css';
+@import 'cmps/book-details.css';
+@import 'cmps/long-text.css';
+@import 'cmps/books-filter.css';
+@import 'cmps/app-header.css';
+@import 'cmps/app-footer.css';
+@import 'cmps/home-page.css';
+@import 'cmps/about-page.css';
+@import 'cmps/review-add.css';
+@import 'cmps/reviews-list.css';
+@import 'cmps/review-preview.css';
+@import 'cmps/user-msg.css';
+@import 'cmps/book-add.css';

@@ -4,6 +4,7 @@ import bookDetails from './book-details.cmp.js'
 
 import booksFilter from '../cmps/books-filter.cmp.js'
 import booksList from '../cmps/books-list.cmp.js'
+import bookAdd from "./book-add.cmp.js"
 
 export default {
     props: [],
@@ -11,7 +12,6 @@ export default {
         <section class="books-app">
             <books-filter @filtered="setFilter"/>
             <books-list :books="filteredBooks" @selected="selectBook"/>
-            <!-- <book-details v-if="selectedBook" :idx="getBookIdx" :book="selectedBook"/> -->
         </section>
         `,
     data() {
@@ -72,5 +72,6 @@ export default {
         booksFilter,
         booksList,
         bookDetails,
+        bookAdd
     }
 }

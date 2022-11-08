@@ -17,10 +17,15 @@ export default {
                 <input 
                 v-model="filterBy.toPrice"
                 type="number"
-            placeholder="Max. price" />
+                placeholder="Max. price" />
             
-            <button @click="filter">Filter</button>
-        </form>
+                <button @click="filter">Filter</button>
+
+                <router-link to="/add-book">
+                    <button>Add new book</button>
+                </router-link>
+
+            </form>
         </section>
 `,
     data() {

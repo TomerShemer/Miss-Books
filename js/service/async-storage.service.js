@@ -4,21 +4,22 @@ export const storageService = {
     post,
     put,
     remove,
-    makeId
 }
 
+//GET ALL
 function query(entityType, delay = 500) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
     return new Promise(resolve => setTimeout(() => resolve(entities), delay))
 }
 
+//GET ONE
 function get(entityType, entityId) {
     return query(entityType).then(entities => entities.find(entity => entity.id === entityId))
 }
 
 //ADD
 function post(entityType, newEntity, append = true) {
-    newEntity.id = makeId()
+    newEntity.id = newEntity.id || _makeId()
     return query(entityType).then(entities => {
         append ? entities.push(newEntity) : entities.unshift(newEntity)
         _save(entityType, entities)
@@ -45,7 +46,8 @@ function remove(entityType, entityId) {
     })
 }
 
-function makeId(length = 11) {
+// Private functions
+function _makeId(length = 11) {
     var text = ''
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     for (var i = 0; i < length; i++) {
@@ -53,7 +55,6 @@ function makeId(length = 11) {
     }
     return text
 }
-// Private functions
 
 function _save(entityType, entities) {
     localStorage.setItem(entityType, JSON.stringify(entities))
